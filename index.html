@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rahul Rathore - Data Engineer</title>
+<meta name="description" content="Rahul Rathore is a senior data engineer in Bengaluru. Six years of ETL/ELT, warehouses and data governance across Azure, AWS and GCP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f4ee;
+    --ink: #201d19;
+    --muted: #6f6759;
+    --faint: #9a917f;
+    --rule: #ddd5c4;
+    --accent: #1f4d2e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+  /* masthead */
+  .masthead {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 26px 0 14px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .masthead .loc { color: var(--muted); }
+
+  /* hero */
+  .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--rule); }
+  .hero h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(44px, 8vw, 68px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+  }
+  .hero .role {
+    margin-top: 18px;
+    font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+  }
+  .hero p.lede {
+    margin-top: 26px;
+    font-size: 19px; line-height: 1.7;
+    color: #3a352d;
+    max-width: 34em;
+  }
+  .hero .contact-line { margin-top: 30px; font-size: 15px; }
+  .hero .contact-line a { color: var(--ink); }
+
+  a { color: var(--accent); text-decoration-color: #b9cabb; text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--accent); }
+
+  /* sections */
+  section { padding: 56px 0 8px; }
+  .sec-label {
+    display: flex; align-items: baseline; gap: 14px;
+    font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--faint); font-weight: 600;
+    margin-bottom: 34px;
+  }
+  .sec-label::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
+  .sec-num { color: var(--accent); }
+
+  /* experience */
+  .job { margin-bottom: 44px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .job h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 23px; letter-spacing: -0.01em;
+  }
+  .job h3 .co { font-weight: 400; color: var(--muted); }
+  .job .dates { font-size: 13.5px; color: var(--faint); letter-spacing: 0.04em; white-space: nowrap; }
+  .job ul { margin: 14px 0 0 1.1em; color: #3a352d; }
+  .job li { margin-bottom: 8px; padding-left: 4px; }
+  .job .award {
+    margin-top: 12px; font-size: 14.5px; color: var(--muted);
+  }
+  .job .award strong { color: var(--ink); font-weight: 600; }
+
+  /* projects */
+  .proj { margin-bottom: 40px; }
+  .proj h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 21px; letter-spacing: -0.01em;
+  }
+  .proj h3 a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .proj h3 a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+  .proj h3 .arrow { font-family: "Inter", sans-serif; font-size: 16px; color: var(--accent); }
+  .proj p { margin-top: 10px; color: #3a352d; }
+  .proj .stack { margin-top: 8px; font-size: 13.5px; color: var(--faint); letter-spacing: 0.02em; }
+  .proj.featured {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 26px 28px 22px;
+    background: #fbf9f4;
+  }
+  .proj.featured .tag {
+    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; display: block; margin-bottom: 10px;
+  }
+
+  /* how I work */
+  .principle { margin-bottom: 26px; display: flex; gap: 18px; }
+  .principle .n {
+    font-family: "Fraunces", Georgia, serif; font-size: 20px; color: var(--accent);
+    min-width: 34px; line-height: 1.4;
+  }
+  .principle p { color: #3a352d; }
+  .principle p strong { color: var(--ink); font-weight: 600; }
+
+  /* skills + certs */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .mini h4 {
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  .mini dl { font-size: 15px; }
+  .mini dt { font-weight: 600; margin-top: 12px; }
+  .mini dt:first-child { margin-top: 0; }
+  .mini dd { color: #4a443a; margin-top: 2px; }
+  .mini ul { list-style: none; font-size: 15px; color: #3a352d; }
+  .mini li { margin-bottom: 12px; }
+  .mini li .when { display: block; font-size: 13px; color: var(--faint); }
+
+  /* education */
+  .edu p { color: #3a352d; }
+  .edu .dates { font-size: 13.5px; color: var(--faint); }
+
+  /* footer */
+  footer {
+    margin-top: 72px; border-top: 1px solid var(--ink);
+    padding: 34px 0 60px;
+  }
+  .foot-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer .big {
+    font-family: "Fraunces", Georgia, serif; font-size: 26px; font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  footer .links { font-size: 15px; line-height: 2; }
+  footer .links a { margin-right: 18px; }
+  footer .colophon {
+    margin-top: 34px; font-size: 12.5px; color: var(--faint); letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .hero { padding: 52px 0 44px; }
+    .hero p.lede { font-size: 17px; }
+    .job .dates { white-space: normal; }
+    .two-col { grid-template-columns: 1fr; gap: 8px; }
+    .proj.featured { padding: 20px 18px 18px; }
+    .principle { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <span>Rahul Rathore</span>
+    <span class="loc">Bengaluru, India</span>
+  </div>
+
+  <header class="hero">
+    <h1>Data pipelines that own up to their mistakes.</h1>
+    <div class="role">Senior Data Engineer</div>
+    <p class="lede">Six years building ETL/ELT pipelines, warehouses and data governance across Azure, AWS and GCP. Right now I'm at Best Buy, moving enterprise data from Teradata to BigQuery. I care about the unglamorous part: pipelines that catch bad data before it reaches a dashboard, and tell you exactly what happened when they can't fix it themselves.</p>
+    <p class="contact-line"><a href="mailto:rahulrathore2365@gmail.com">rahulrathore2365@gmail.com</a></p>
+  </header>
+
+  <section id="experience">
+    <div class="sec-label"><span class="sec-num">01</span><span>Experience</span></div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Software Engineer 2 <span class="co">- Best Buy</span></h3>
+        <span class="dates">Nov 2025 - Present</span>
+      </div>
+      <ul>
+        <li>Designed and built Teradata-to-BigQuery ETL/ELT pipelines on a metadata-driven framework (SQL, YAML, JSON), delivering 50+ silver-layer semantic assets and curated gold reporting layers used by business stakeholders.</li>
+        <li>Tuned complex SQL transformations through execution-plan analysis, partitioning and key design - roughly 30% faster queries across 1-2 TB of enterprise data processed daily.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Senior Data Engineer <span class="co">- ProArch</span></h3>
+        <span class="dates">Apr 2021 - Nov 2025</span>
+      </div>
+      <ul>
+        <li>Built and maintained end-to-end ETL pipelines delivering data to downstream applications, improving data processing efficiency by 30%.</li>
+      </ul>
+      <p class="award"><strong>Exemplary Dedication Award, Oct 2024</strong> - for consistent hard work and contribution to the team's success.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Data Analyst, Operations <span class="co">- Vaibhav Vyapaar (Capfront Technologies)</span></h3>
+        <span class="dates">Jan 2020 - Nov 2020</span>
+      </div>
+      <ul>
+        <li>Cut marketing spend by 15% through channel optimization and A/B testing; automated reporting that had cost the team 20+ hours a month.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-label"><span class="sec-num">02</span><span>Selected work</span></div>
+
+    <div class="proj featured">
+      <span class="tag">Featured project</span>
+      <h3><a href="https://github.com/rahulrathore95/self-healing-data-pipeline">Self-Healing Data Pipeline <span class="arrow">&rarr;</span></a></h3>
+      <p>An ETL pipeline that catches its own data-quality failures - schema drift, type corruption, null spikes, duplicate keys, volume drops - diagnoses the root cause, applies a remediation playbook and re-runs. A circuit breaker caps the retries; when it opens, the incident log hands a human everything they need. Quarantine table for bad rows, audit log for every action, idempotent upserts so re-runs never double-load. Includes mappings that show how the same detect-diagnose-heal loop runs on a production stack, plus an optional LLM advisor for failures the rules can't classify. 19 tests, CI across Python 3.10-3.12, one-command demo.</p>
+      <p class="stack">Python - pandas - SQLite - rule-based diagnostics - optional LLM advisor</p>
+    </div>
+
+    <div class="proj">
+      <h3>Azure Medallion ETL with Purview Governance</h3>
+      <p>Bronze-to-gold medallion pipeline on Azure Databricks with ADF and YAML-driven configs. Automated Microsoft Purview lineage and data-quality rules; delivered star-schema data marts for Power BI and cut daily load time by 30%.</p>
+      <p class="stack">Azure Databricks - Spark - Data Factory - Purview - Power BI</p>
+    </div>
+
+    <div class="proj">
+      <h3>Real-time manufacturing plant dashboard</h3>
+      <p>Streaming pipeline for a plant floor: IoT sensor data through Event Hubs and Stream Analytics into live Power BI dashboards covering OEE and utilities.</p>
+      <p class="stack">Azure Event Hubs - Stream Analytics - Spark - Power BI</p>
+    </div>
+
+    <div class="proj">
+      <h3>E-commerce product catalogue pipeline</h3>
+      <p>Batch pipeline on AWS, triggered by user uploads: data fetched from APIs, cleaned, loaded into DynamoDB, and served back to the UI through microservice APIs.</p>
+      <p class="stack">AWS Glue - Lambda - API Gateway - S3 - DynamoDB - SNS - CloudFront</p>
+    </div>
+
+    <div class="proj">
+      <h3><a href="https://github.com/rahulrathore95">MapMitra <span class="arrow">&rarr;</span></a></h3>
+      <p>A personal AI assistant product powered by LLMs - an AI reply drafter, sentiment analysis, and agent-style tooling with tool-calling workflows.</p>
+      <p class="stack">Python - LLM APIs - AI agents - prompt engineering</p>
+    </div>
+
+    <div class="proj">
+      <h3>NYC rentals pricing POC</h3>
+      <p>Synapse-based warehouse integrating Airbnb and API data, with predictive and prescriptive ML models identifying the drivers of rental pricing.</p>
+      <p class="stack">Azure Synapse - SQL - ML models</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sec-label"><span class="sec-num">03</span><span>How I work</span></div>
+
+    <div class="principle">
+      <span class="n">1.</span>
+      <p><strong>Bad data gets quarantined, not loaded.</strong> Quality gates run before anything lands in the warehouse. Rows that fail checks go to a quarantine table with the reason attached - dashboards stay clean and nothing disappears silently.</p>
+    </div>
+    <div class="principle">
+      <span class="n">2.</span>
+      <p><strong>Fix what's fixable, escalate with context.</strong> Automated remediation handles the known failure modes. When a circuit breaker trips, the incident log carries the failing checks, the diagnosis and everything already tried - nobody starts from a blank pager.</p>
+    </div>
+    <div class="principle">
+      <span class="n">3.</span>
+      <p><strong>Re-runs are safe.</strong> Idempotent loads and audit logs mean a pipeline can be re-run at 3am without a second thought, and every automated action is traceable afterwards.</p>
+    </div>
+    <div class="principle">
+      <span class="n">4.</span>
+      <p><strong>Governance is part of the build.</strong> Lineage and data-quality rules ship with the pipeline (Purview on my Azure work), not as a cleanup project six months later.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-label"><span class="sec-num">04</span><span>Toolkit &amp; credentials</span></div>
+    <div class="two-col">
+      <div class="mini">
+        <h4>Toolkit</h4>
+        <dl>
+          <dt>Languages</dt><dd>Python, SQL, PySpark</dd>
+          <dt>Data engineering</dt><dd>Warehouse design, dimensional modeling, batch &amp; streaming ETL/ELT, data quality, governance</dd>
+          <dt>Azure</dt><dd>Databricks, Data Factory, Data Lake, Stream Analytics, Event Hubs, Functions, Purview</dd>
+          <dt>AWS</dt><dd>Glue, Lambda, S3, API Gateway, DynamoDB</dd>
+          <dt>Warehouses</dt><dd>BigQuery, Snowflake, Fabric Lakehouse, Synapse</dd>
+          <dt>AI / LLM</dt><dd>LLM APIs, AI agents, prompt engineering</dd>
+          <dt>Visualization</dt><dd>Power BI, Tableau, Looker</dd>
+        </dl>
+      </div>
+      <div class="mini">
+        <h4>Certifications</h4>
+        <ul>
+          <li>Google Cloud Professional Data Engineer<span class="when">Google Cloud - Sep 2026</span></li>
+          <li>Fabric Data Engineer Associate<span class="when">Microsoft - Jun 2025</span></li>
+          <li>Azure Data Engineer Associate<span class="when">Microsoft - Sep 2024</span></li>
+        </ul>
+        <h4 style="margin-top: 34px;">Education</h4>
+        <ul>
+          <li>B.Tech, Electronics &amp; Communication<span class="when">Rajasthan Technical University, Kota - 2015-2019</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <p class="big">Open to remote senior data engineering roles.</p>
+      </div>
+      <div class="links">
+        <a href="mailto:rahulrathore2365@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/rahulrathore12">LinkedIn</a>
+        <a href="https://github.com/rahulrathore95">GitHub</a>
+      </div>
+    </div>
+    <p class="colophon">Set in Fraunces and Inter. No trackers, no template.</p>
+  </footer>
+
+</div>
+</body>
+</html>
